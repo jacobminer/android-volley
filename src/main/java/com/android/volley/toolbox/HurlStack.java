@@ -63,7 +63,7 @@ public class HurlStack implements HttpStack {
     }
 
     private final UrlRewriter mUrlRewriter;
-    private final SSLSocketFactory mSslSocketFactory;
+    private SSLSocketFactory mSslSocketFactory;
 
     public HurlStack() {
         this(null);
@@ -82,6 +82,10 @@ public class HurlStack implements HttpStack {
      */
     public HurlStack(UrlRewriter urlRewriter, SSLSocketFactory sslSocketFactory) {
         mUrlRewriter = urlRewriter;
+        mSslSocketFactory = sslSocketFactory;
+    }
+
+    public void setSslSocketFactory(SSLSocketFactory sslSocketFactory) {
         mSslSocketFactory = sslSocketFactory;
     }
 
